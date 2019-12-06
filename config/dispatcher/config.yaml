@@ -1,0 +1,11 @@
+---
+apache-log-level: dispatcher:warn
+config-dir: conf
+decline-root: Off
+keep-alive-timeout: 60
+log-level: warn
+log-path: logs/dispatcher.log
+name: dispatcher
+pass-error: 0
+ssi-no-cache: Off
+use-processed-url: On

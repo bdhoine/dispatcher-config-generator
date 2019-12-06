@@ -1,4 +1,4 @@
-name: Build
+name: build
 
 on: [push]
 
@@ -20,7 +20,8 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm ci
-        npm run assemble
+        npm run generate
+        npm run lint
         npm test
       env:
         CI: true

@@ -1,0 +1,7 @@
+{{#if name}}
+/name {{name}}
+
+{{/if}}
+/farms {
+  $include "dispatcher.*-*.inc.any"
+}

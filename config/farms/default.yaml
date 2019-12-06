@@ -1,0 +1,87 @@
+---
+priority: 5
+name: default
+client-headers:
+- X-Forwarded-For
+- Host
+virtual-hosts:
+- localhost
+- 192.168.0.1
+session-management:
+  directory: /some/directory
+  encode: md5
+  header: HTTP:authorization
+  timeout: 800
+renderers:
+- hostname: dispatcher1
+  port: 4502
+  timeout: 60
+  receive-timeout: 120
+  ipv4: 0
+  secure: 0
+- hostname: dispatcher2
+  port: 4502
+filters:
+- type: deny
+  glob: '*'
+- type: allow
+  url: '*.html'
+- type: allow
+  url: '*.html'
+  query: q
+  protocol: http
+  path: /some/path
+  selectors: json
+  extension: xml
+  suffix: allo
+vanity-urls:
+  file: /tmp/path
+  delay: 600
+cache:
+  doc-root: /var/www/html
+  rules:
+  - type: deny
+    glob: '*'
+  - type: allow
+    url: '*.html'
+  allowed-clients:
+  - type: allow
+    glob: '*'
+  invalidate:
+  - type: allow
+    glob: '*'
+  stat-file: /some/path
+  serve-stale-on-error: 1
+  allow-authorized: 1
+  stat-files-level: 1
+  invalidate-handler: /some/handler
+  ignore-url-parameters:
+  - type: allow
+    glob: '*'
+  headers:
+    - Expires
+    - Cache-Control
+  grace-period: 1
+  enable-ttl: 0
+propagate-synd-post: 1
+auth-checker:
+  url: http://check.me
+  filter:
+  - type: deny
+    glob: '*'
+  headers:
+  - type: deny
+    glob: '*'
+statistics:
+- category: html
+  glob: '*.html'
+sticky-connections-for: /products
+sticky-connections:
+- /content/image
+- /content/video
+- /var/files/pdf
+health-check-url: http://health.check
+retry-delay: 1
+number-of-retries: 5
+failover: 0
+unavailable-penalty: 1

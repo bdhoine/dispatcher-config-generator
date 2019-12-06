@@ -1,0 +1,26 @@
+{
+  "name": "dispatcher-config-generator",
+  "version": "1.0.0",
+  "description": "Generate dispatcher config from yaml",
+  "scripts": {
+    "generate:dispatcher": "assemble dispatcher",
+    "generate:farms": "assemble farms",
+    "generate": "assemble",
+    "lint": "eslint .",
+    "test": "mocha"
+  },
+  "author": "Barry d'Hoine",
+  "license": "MIT",
+  "devDependencies": {
+    "assemble": "^0.24.3",
+    "async": "^3.1.0",
+    "chai": "^4.2.0",
+    "eslint": "^6.7.2",
+    "eslint-config-google": "^0.14.0",
+    "glob": "^7.1.6",
+    "gulp-extname": "^0.2.2",
+    "mocha": "^6.2.2",
+    "path": "^0.12.7",
+    "yamljs": "^0.3.0"
+  }
+}
