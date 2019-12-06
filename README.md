@@ -7,7 +7,8 @@ Generate dispatcher configuration files from templates with YAML input.
 
 ## Running
 
-This project requires [nodejs](https://nodejs.org/) to run. To install all runtime depenencies you can use the `npm` command.
+This project requires [nodejs](https://nodejs.org/) to run.
+To install all runtime depenencies you can use the `npm` command.
 
 ```sh
 npm install
@@ -23,7 +24,8 @@ Output will be generated in the [output](output) folder.
 
 ## Configuration
 
-Configuration of the dispatcher and the corresponding farms should be done using the following directory structure.
+Configuration of the dispatcher and the corresponding farms should be done using
+the following directory structure.
 
 ```txt
 config/
