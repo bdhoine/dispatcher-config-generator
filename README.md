@@ -14,13 +14,37 @@ To install all runtime depenencies you can use the `npm` command.
 npm install
 ```
 
-To generate the dispatcher config files you should run the assemble `npm` script.
+Input will be read from the [config](config) folder.
+Output will be generated in the [output](output) folder by default.
+
+### NPM
+
+To generate the dispatcher config files you can run the assemble `npm` script.
 
 ```sh
 npm run generate
 ```
 
-Output will be generated in the [output](output) folder.
+### Node
+
+Generate the files with using the `node` cli.
+
+```sh
+node . -c config/
+```
+
+All options can be checked by passing the `--help` argument.
+
+```sh
+$ node . --help
+Usage: -c <config-directory> [-o <output-directory>]
+
+Options:
+  --help        Show help                                              [boolean]
+  --version     Show version number                                    [boolean]
+  -c, --config  Path to config files                         [string] [required]
+  -o, --output  Path to write output files to                           [string]
+```
 
 ## Configuration
 
