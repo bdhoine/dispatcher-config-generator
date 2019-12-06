@@ -5,7 +5,8 @@
         "node": true
     },
     "extends": [
-        "google"
+        "google",
+        "plugin:mocha/recommended"
     ],
     "globals": {
         "Atomics": "readonly",
@@ -14,6 +15,9 @@
     "parserOptions": {
         "ecmaVersion": 2018
     },
+    "plugins": [
+        "mocha"
+    ],
     "rules": {
         "comma-dangle": "off",
         "max-len": [
