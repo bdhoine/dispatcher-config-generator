@@ -1,6 +1,9 @@
 # Dispatcher Config Generator
 
-![Github Actions](https://github.com/bdhoine/dispatcher-config-generator/workflows/build/badge.svg)
+**Warning**: This project is work in progress, so please contribute to work
+towards a first release if you like the idea.
+
+![Github Actions](https://github.com/bdhoine/dispatcher-config-generator/workflows/Build/badge.svg)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=bdhoine_dispatcher-config-generator&metric=alert_status)](https://sonarcloud.io/dashboard?id=bdhoine_dispatcher-config-generator)
 
 Generate dispatcher configuration files from templates with YAML input.
@@ -99,8 +102,9 @@ virtual-hosts:
 
 ## TODO
 
-- Create unit and integration tests
+- Create tests
 - Enhance documentation
 - Seperate config and logic to generate configs
-- Determine mechanism to support environments
+- Add publish workflow to npmjs
+- Determine mechanism to support environments or variables
 - Add templates for vhost creation
