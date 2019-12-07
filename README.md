@@ -14,29 +14,24 @@ To install all runtime depenencies you can use the `npm` command.
 npm install
 ```
 
-Input will be read from the [config](config) folder.
+Install the `discog` binary globally.
+
+```sh
+npm install -g .
+```
+
+Generate the config files with the `discog` command.
+
+```sh
+discog -c config
+```
+
 Output will be generated in the [output](output) folder by default.
-
-### NPM
-
-To generate the dispatcher config files you can run the assemble `npm` script.
-
-```sh
-npm run generate
-```
-
-### Node
-
-Generate the files with using the `node` cli.
-
-```sh
-node . -c config/
-```
 
 All options can be checked by passing the `--help` argument.
 
 ```sh
-$ node . --help
+$ discog --help
 Usage: -c <config-directory> [-o <output-directory>]
 
 Options:
