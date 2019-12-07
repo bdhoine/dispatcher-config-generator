@@ -43,10 +43,11 @@ function FarmConfig(options = {}) {
   }
   this.data = {...defaults, ...this.data};
   this.validate();
+  return this;
 }
 
 FarmConfig.prototype.validate = function() {
-  if (this.data.cache['doc-root'] == undefined) {
+  if (this.data.cache['doc-root'] === undefined) {
     throw new Error('Configuration element \'cache.doc-root\' is mandatory');
   }
 };

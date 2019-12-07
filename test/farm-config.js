@@ -2,6 +2,7 @@ require('mocha');
 const expect = require('chai').expect;
 const farm = require('../src/farm-config');
 
+const docRoot = '/var/www/html';
 const defaults = {
   'priority': 0,
   'client-headers': ['*'],
@@ -15,7 +16,7 @@ const defaults = {
     'glob': '*',
   }],
   'cache': {
-    'doc-root': '/var/www/html',
+    'doc-root': docRoot,
   },
 };
 
@@ -28,7 +29,7 @@ describe('Farm Config', function() {
     const config = farm({
       data: {
         cache: {
-          'doc-root': '/var/www/html',
+          'doc-root': docRoot,
         },
       },
     });
@@ -39,7 +40,7 @@ describe('Farm Config', function() {
     const config = farm({
       data: {
         cache: {
-          'doc-root': '/var/www/html',
+          'doc-root': docRoot,
         }
       }
     });
@@ -50,7 +51,7 @@ describe('Farm Config', function() {
     const config = farm({
       config: `
         cache:
-          doc-root: /var/www/html
+          doc-root: ${docRoot}
       `
     });
     expect(config.data).to.deep.equal(defaults);
