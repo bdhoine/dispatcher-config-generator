@@ -1,15 +1,20 @@
 {
   "name": "dispatcher-config-generator",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Generate dispatcher config from yaml",
   "scripts": {
-    "generate:dispatcher": "assemble dispatcher",
-    "generate:farms": "assemble farms",
-    "generate": "assemble",
+    "generate": "node . -c config",
+    "lint:eslint-fix": "eslint . --fix",
     "lint:eslint": "eslint .",
+    "lint:markdown-fix": "markdownlint '**/*.md' --ignore node_modules --fix",
     "lint:markdown": "markdownlint '**/*.md' --ignore node_modules",
+    "lint-fix": "npm run lint:eslint-fix && npm run lint:markdown-fix",
     "lint": "npm run lint:eslint && npm run lint:markdown",
     "test": "mocha"
+  },
+  "main": "bin/discog.js",
+  "bin": {
+    "discog": "./bin/discog.js"
   },
   "author": "Barry d'Hoine",
   "license": "MIT",
@@ -25,6 +30,7 @@
     "markdownlint-cli": "^0.19.0",
     "mocha": "^6.2.2",
     "path": "^0.12.7",
-    "yamljs": "^0.3.0"
+    "yamljs": "^0.3.0",
+    "yargs": "^15.0.2"
   }
 }
