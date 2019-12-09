@@ -8,25 +8,22 @@ towards a first release if you like the idea.
 
 Generate dispatcher configuration files from templates with YAML input.
 
-## Running
+## Usage
 
-This project requires [nodejs](https://nodejs.org/) to run.
-To install all runtime depenencies you can use the `npm` command.
+When you install the tool the `dispatcher-config-generator` command should be
+available
 
 ```sh
-npm install
+npm install -g dispatcher-config-generator
 ```
 
-Install the `discog` binary globally.
+To Generate the config files you should issue the `dispatcher-config-generator`
+command with the
+config folder containing the config yaml files.
+How these can be can be found in the configuration section.
 
 ```sh
-npm install -g .
-```
-
-Generate the config files with the `discog` command.
-
-```sh
-discog -c config
+dispatcher-config-generator -c config
 ```
 
 Output will be generated in the [output](output) folder by default.
@@ -34,7 +31,7 @@ Output will be generated in the [output](output) folder by default.
 All options can be checked by passing the `--help` argument.
 
 ```sh
-$ discog --help
+$ dispatcher-config-generator --help
 Usage: -c <config-directory> [-o <output-directory>]
 
 Options:
@@ -58,7 +55,13 @@ config/
     └── farm.yaml
 ```
 
+The subfolders `dispatcher` and `farms` are fixed.
+The config file for the dispatcher should also be `config.yaml`
+For the farms you can choose an aribtrary name.
+
 ### Dispatcher
+
+Example yaml config file for the dispatcher configuration
 
 ```yaml
 ---
@@ -75,6 +78,8 @@ use-processed-url: On
 ```
 
 ### Farms
+
+Example yaml config file for the dispatcher farm configuration
 
 ```yaml
 ---
@@ -108,3 +113,22 @@ virtual-hosts:
 - Add publish workflow to npmjs
 - Determine mechanism to support environments or variables
 - Add templates for vhost creation
+
+## Development
+
+To install all depenencies you can use the `npm` command.
+
+```sh
+npm install
+```
+
+Install the `dispatcher-config-generator` binary globally.
+
+```sh
+npm install -g .
+```
+
+To run all test you should use the `npm test` command.
+
+All source code files are also checked on syntax.
+To check this you should run the `npm lint` command.

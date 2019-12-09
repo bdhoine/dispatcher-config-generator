@@ -6,7 +6,7 @@ const extname = require('gulp-extname');
 const glob = require('glob');
 const yaml = require('yamljs');
 
-const farm = require('../src/farm-config');
+const farm = require('./farm-config');
 
 const app = assemble();
 
