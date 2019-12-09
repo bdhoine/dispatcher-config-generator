@@ -12,9 +12,9 @@
     "lint": "npm run lint:eslint && npm run lint:markdown",
     "test": "mocha"
   },
-  "main": "bin/discog.js",
+  "main": "bin/dispatcher-config-generator.js",
   "bin": {
-    "discog": "./bin/discog.js"
+    "dispatcher-config-generator": "./bin/dispatcher-config-generator.js"
   },
   "author": "Barry d'Hoine",
   "license": "MIT",

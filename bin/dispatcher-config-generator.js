@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const discog = require('../src/discog');
+const app = require('../src/dispatcher-config-generator');
 const yargs = require('yargs');
 
 const options = yargs
@@ -20,7 +20,7 @@ const options = yargs
         })
     .argv;
 
-discog({
+app({
   config: options.config,
   output: options.output || 'output'
 });
