@@ -1,0 +1,87 @@
+    /cache
+      {
+        /docroot "{{cache.doc-root}}"
+
+        /rules
+        {
+          {{#each cache.rule as |rule i|}}
+          /{{i}}
+          {
+            /type "{{rule.type}}"
+            /glob "{{rule.glob}}"
+          }
+          {{/each}}
+        }
+
+        /allowedClients
+        {
+          {{#each cache.allowed-clients as |allowed-client i|}}
+          /{{i}}
+          {
+            /type "{{allowed-client.type}}"
+            /glob "{{allowed-client.glob}}"
+          }
+          {{/each}}
+        }
+
+        {{#if cache.invalidate}}
+        /invalidate {
+        {
+          {{#each cache.invalidate as |invalidate i|}}
+          /{{i}}
+          {
+            /type "{{invalidate.type}}"
+            /glob "{{invalidate.glob}}"
+          }
+          {{/each}}
+        }
+        {{/if}}
+
+        {{#if cache.stat-file}}
+        /statfile "{{cache.stat-file}}"
+        {{/if}}
+        {{#if cache.serve-stale-on-error includeZero=true}}
+        /serveStaleOnError "{{cache.serve-stale-on-error}}"
+        {{/if}}
+        {{#if cache.allow-authorized includeZero=true}}
+        /allowAuthorized "{{cache.allow-authorized}}"
+        {{/if}}
+        {{#if cache.stat-files-level}}
+        /statfileslevel "{{cache.stat-files-level}}"
+        {{/if}}
+        {{#if cache.invalidate-handler}}
+        /invalidateHandler "{{cache.invalidate-handler}}"
+        {{/if}}
+
+        {{#if cache.ignore-url-parameters}}
+        /ignoreUrlParams
+        {
+          {{#each cache.ignore-url-parameters as |ignore-url-parameter i|}}
+          /{{i}}
+          {
+            /type "{{ignore-url-parameter.type}}"
+            /glob "{{ignore-url-parameter.glob}}"
+          }
+          {{/each}}
+        }
+        {{/if}}
+
+        {{#if cache.headers}}
+        /headers
+          {
+            {{#each cache.headers as |header|}}
+            "{{header}}"
+            {{/each}}
+          }
+        {{/if}}
+
+        {{#if cache.mode}}
+        /mode "{{cache.mode}}"
+        {{/if}}
+        {{#if cache.grace-period}}
+        /gracePeriod "{{cache.grace-period}}"
+        {{/if}}
+        {{#if cache.enable-ttl includeZero=true}}
+        /enableTTL "{{cache.enable-ttl}}"
+        {{/if}}
+      }

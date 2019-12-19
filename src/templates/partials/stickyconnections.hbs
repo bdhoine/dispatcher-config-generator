@@ -1,0 +1,27 @@
+    {{#if sticky-connections}}
+    /stickyConnections
+      {
+        /paths
+          {
+            {{#each sticky-connections.paths as |path|}}
+            "{{path}}"
+            {{/each}}
+          }
+        {{#if sticky-connections.domain}}
+        /domain "{{sticky-connections.domain}}"
+        {{/if}}
+        {{#if sticky-connections.domain}}
+        /domain "{{sticky-connections.domain}}"
+        {{/if}}
+        {{#if sticky-connections.http-only}}
+        /httpOnly "{{sticky-connections.http-only}}"
+        {{/if}}
+        {{#if sticky-connections.secure}}
+        /secure "{{sticky-connections.secure}}"
+        {{/if}}
+      }
+    {{/if}}
+
+    {{#if sticky-connections-for}}
+    /stickyConnectionsFor "{{sticky-connections-for}}"
+    {{/if}}

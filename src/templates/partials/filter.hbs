@@ -1,0 +1,41 @@
+    /filter
+      {
+        {{#each filters as |filter i|}}
+        {{#if filter.glob}}
+        /{{i}}
+          {
+            /type "{{filter.type}}"
+            /glob "{{filter.glob}}"
+          }
+        {{else}}
+        /{{i}}
+          {
+            /type "{{filter.type}}"
+            {{#if filter.method}}
+            /method '{{filter.method}}'
+            {{/if}}
+            {{#if filter.url}}
+            /url '{{filter.url}}'
+            {{/if}}
+            {{#if filter.query}}
+            /query '{{filter.query}}'
+            {{/if}}
+            {{#if filter.protocol}}
+            /protocol '{{filter.protocol}}'
+            {{/if}}
+            {{#if filter.path}}
+            /path '{{filter.path}}'
+            {{/if}}
+            {{#if filter.selectors}}
+            /selectors '{{filter.selectors}}'
+            {{/if}}
+            {{#if filter.extension}}
+            /extension '{{filter.extension}}'
+            {{/if}}
+            {{#if filter.suffix}}
+            /suffix '{{filter.suffix}}'
+            {{/if}}
+          }
+        {{/if}}
+      {{/each}}
+      }

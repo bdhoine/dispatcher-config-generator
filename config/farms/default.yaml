@@ -55,6 +55,7 @@ cache:
   allow-authorized: 1
   stat-files-level: 1
   invalidate-handler: /some/handler
+  mode: '0755'
   ignore-url-parameters:
   - type: allow
     glob: '*'
@@ -77,9 +78,13 @@ statistics:
   glob: '*.html'
 sticky-connections-for: /products
 sticky-connections:
-- /content/image
-- /content/video
-- /var/files/pdf
+  paths:
+  - /content/image
+  - /content/video
+  - /var/files/pdf
+  domain: www.example.org
+  http-only: 1
+  secure: 0
 health-check-url: http://health.check
 retry-delay: 1
 number-of-retries: 5

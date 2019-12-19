@@ -1,0 +1,28 @@
+    {{#if auth-checker}}
+    /auth_checker {
+
+      /url "{{auth-checker.url}}"
+
+      /filter
+        {
+          {{#each auth-checker.filter as |filter i|}}
+          /{{i}}
+          {
+            /type "{{filter.type}}"
+            /glob "{{filter.glob}}"
+          }
+          {{/each}}
+        }
+
+      /headers
+        {
+          {{#each auth-checker.headers as |headers i|}}
+          /{{i}}
+          {
+            /type "{{headers.type}}"
+            /glob "{{headers.glob}}"
+          }
+          {{/each}}
+        }
+    }
+    {{/if}}

@@ -1,0 +1,12 @@
+    {{#if statistics}}
+    /statistics {
+      /categories {
+        {{#each statistics as |statistic|}}
+        /{{statistic.category}}
+          {
+            /glob "{{statistic.glob}}"
+          }
+        {{/each}}
+      }
+    }
+    {{/if}}
