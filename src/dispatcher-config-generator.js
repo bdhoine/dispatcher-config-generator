@@ -12,6 +12,7 @@ const app = assemble();
 
 function generateDispatcherConfig(options) {
   app.data(yaml.load(`${options.config}/dispatcher/config.yaml`));
+  app.partials('src/templates/partials/*.hbs');
   app.src('src/templates/dispatcher.{conf,any}')
       .pipe(app.renderFile('hbs'))
       .pipe(app.dest('output'));

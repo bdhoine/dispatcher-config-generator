@@ -1,0 +1,25 @@
+    /renders
+      {
+        {{#each renderers as |renderer i|}}
+        /renderer{{i}}
+          {
+            /hostname "{{renderer.hostname}}"
+            /port "{{renderer.port}}"
+            {{#if renderer.timeout includeZero=true}}
+            /timeout "{{renderer.timeout}}"
+            {{/if}}
+            {{#if renderer.receive-timeout includeZero=true}}
+            /receiveTimeout "{{renderer.receive-timeout}}"
+            {{/if}}
+            {{#if renderer.ipv4 includeZero=true}}
+            /ipv4 "{{renderer.ipv4}}"
+            {{/if}}
+            {{#if renderer.secure includeZero=true}}
+            /secure "{{renderer.secure}}"
+            {{/if}}
+            {{#if renderer.always-resolve includeZero=true}}
+            /always-resolve "{{renderer.always-resolve}}"
+            {{/if}}
+          }
+        {{/each}}
+      }

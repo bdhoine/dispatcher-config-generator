@@ -1,0 +1,15 @@
+    {{#if session-management}}
+    /sessionmanagement
+      {
+        /directory "{{session-management.directory}}"
+        {{#if session-management.encode}}
+        /encode "{{session-management.encode}}"
+        {{/if}}
+        {{#if session-management.header}}
+        /header "{{session-management.header}}"
+        {{/if}}
+        {{#if session-management.timeout}}
+        /timeout "{{session-management.timeout}}"
+        {{/if}}
+      }
+    {{/if}}
