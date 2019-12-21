@@ -26,6 +26,7 @@
                 "code": 120
             }
         ],
+        "mocha/no-setup-in-describe": "off",
         "require-jsdoc": 0
     }
 }

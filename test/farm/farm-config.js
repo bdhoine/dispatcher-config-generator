@@ -1,32 +1,27 @@
 require('mocha');
 const expect = require('chai').expect;
-const farm = require('../src/farm-config');
+
+const FarmConfig = require('../../src/farm/farm-config');
+const farmDefaults = require('../../src/farm/defaults');
 
 const docRoot = '/var/www/html';
 const defaults = {
-  'priority': 0,
-  'client-headers': ['*'],
-  'virtual-hosts': ['*'],
-  'renderers': [{
-    'hostname': 'localhost',
-    'port': 4503,
-  }],
-  'filters': [{
-    'type': 'allow',
-    'glob': '*',
-  }],
+  ...farmDefaults,
   'cache': {
     'doc-root': docRoot,
   },
 };
 
-describe('Farm Config', function() {
+describe('farm config', function() {
   it('should throw error without cache.doc-root', function() {
-    expect(farm).to.throw('Configuration element \'cache.doc-root\' is mandatory');
+    const config = function() {
+      new FarmConfig();
+    };
+    expect(config).to.throw('Configuration element \'cache.doc-root\' is mandatory');
   });
 
   it('data is default when only cache.doc-root is set', function() {
-    const config = farm({
+    const config = new FarmConfig({
       data: {
         cache: {
           'doc-root': docRoot,
@@ -37,7 +32,7 @@ describe('Farm Config', function() {
   });
 
   it('priority is \'00\' when set to \'0\'', function() {
-    const config = farm({
+    const config = new FarmConfig({
       data: {
         cache: {
           'doc-root': docRoot,
@@ -48,7 +43,7 @@ describe('Farm Config', function() {
   });
 
   it('should parse yaml config strings', function() {
-    const config = farm({
+    const config = new FarmConfig({
       config: `
         cache:
           doc-root: ${docRoot}

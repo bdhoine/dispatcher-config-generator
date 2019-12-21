@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const app = require('../src/dispatcher-config-generator');
+const dispatcherConfigGenerator = require('../src/dispatcher-config-generator');
 const yargs = require('yargs');
 
 const options = yargs
@@ -20,7 +20,7 @@ const options = yargs
         })
     .argv;
 
-app({
+dispatcherConfigGenerator({
   config: options.config,
   output: options.output || 'output'
 });

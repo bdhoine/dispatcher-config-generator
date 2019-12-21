@@ -1,6 +1,6 @@
 {
   "name": "dispatcher-config-generator",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Generate dispatcher config from yaml",
   "scripts": {
     "generate": "node . -c config",
@@ -8,9 +8,9 @@
     "lint:eslint": "eslint .",
     "lint:markdown-fix": "markdownlint '**/*.md' --ignore node_modules --fix",
     "lint:markdown": "markdownlint '**/*.md' --ignore node_modules",
-    "lint-fix": "npm run lint:eslint-fix && npm run lint:markdown-fix",
+    "lint:fix": "npm run lint:eslint-fix && npm run lint:markdown-fix",
     "lint": "npm run lint:eslint && npm run lint:markdown",
-    "test": "mocha"
+    "test": "mocha --recursive"
   },
   "main": "bin/dispatcher-config-generator.js",
   "bin": {
@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "chai-fs": "^2.0.0",
     "eslint": "^6.7.2",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-mocha": "^6.2.2",

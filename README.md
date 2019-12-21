@@ -107,10 +107,9 @@ virtual-hosts:
 
 ## TODO
 
-- Create tests
+- Add more tests
 - Enhance documentation
 - Seperate config and logic to generate configs
-- Add publish workflow to npmjs
 - Determine mechanism to support environments or variables
 - Add templates for vhost creation
 
