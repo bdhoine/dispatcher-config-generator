@@ -112,6 +112,7 @@ virtual-hosts:
 - Seperate config and logic to generate configs
 - Determine mechanism to support environments or variables
 - Add templates for vhost creation
+- Add git commit hooks
 
 ## Development
 

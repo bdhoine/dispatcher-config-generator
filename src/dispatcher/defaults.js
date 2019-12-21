@@ -2,7 +2,7 @@ module.exports = {
   'config': 'conf',
   'decline-root': 'Off',
   'keep-alive-timeout': 60,
-  'log-level': 'warn',
+  'log-level': 3,
   'log-path': 'logs/dispatcher.log',
   'name': 'dispatcher',
   'no-canon-url': 'Off',

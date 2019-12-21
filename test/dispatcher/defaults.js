@@ -22,8 +22,8 @@ describe('dispatcher config defaults', function() {
     expect(config.data['keep-alive-timeout']).to.equal(60);
   });
 
-  it('log level should be \'warn\'', function() {
-    expect(config.data['log-level']).to.equal('warn');
+  it('log level should be \'3\'', function() {
+    expect(config.data['log-level']).to.equal(3);
   });
 
   it('log path should be \'logs/dispatcher.log\'', function() {

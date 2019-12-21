@@ -7,7 +7,6 @@ class FarmConfig extends Config {
   constructor(options = {}) {
     super(options);
     this.data = {...defaults, ...this.data};
-    this.validate();
   }
 
   generate() {
@@ -18,13 +17,7 @@ class FarmConfig extends Config {
     return this.assemble.src('src/templates/dispatcher.inc')
         .pipe(this.assemble.renderFile('hbs'))
         .pipe(extname(`.${priority}-${name}.inc.any`))
-        .pipe(this.assemble.dest(this.options.output));
-  }
-
-  validate() {
-    if (this.data.cache['doc-root'] === undefined) {
-      throw new Error('Configuration element \'cache.doc-root\' is mandatory');
-    }
+        .pipe(this.assemble.dest(this.output));
   }
 
   property(key) {
@@ -33,7 +26,7 @@ class FarmConfig extends Config {
         return `0${this.data.priority}`;
       }
     }
-    return this.data[key];
+    return `${this.data[key]}`;
   }
 }
 

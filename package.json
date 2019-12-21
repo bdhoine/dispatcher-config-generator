@@ -10,7 +10,7 @@
     "lint:markdown": "markdownlint '**/*.md' --ignore node_modules",
     "lint:fix": "npm run lint:eslint-fix && npm run lint:markdown-fix",
     "lint": "npm run lint:eslint && npm run lint:markdown",
-    "test": "mocha --recursive"
+    "test": "nyc --reporter=lcov --reporter=text mocha --recursive"
   },
   "main": "bin/dispatcher-config-generator.js",
   "bin": {
@@ -34,6 +34,14 @@
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-mocha": "^6.2.2",
     "markdownlint-cli": "^0.19.0",
-    "mocha": "^6.2.2"
+    "mocha": "^6.2.2",
+    "nyc": "^14.1.1"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "branches": 95,
+    "lines": 95,
+    "functions": 100,
+    "statements": 95
   }
 }

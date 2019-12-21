@@ -12,10 +12,7 @@ class Config {
     } else if (options.data) {
       this.data = options.data;
     }
-    if (!options.output) {
-      options.output = 'output';
-    }
-    this.options = options;
+    this.output = options.output || 'output';
     this.assemble = assemble();
   }
 }
