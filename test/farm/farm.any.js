@@ -14,7 +14,7 @@ describe('dispatcher.inc.any file', function() {
         },
         name: 'website',
       }});
-    stream = config.generate();
+    const stream = config.generate();
     stream.on('end', function() {
       done();
     });

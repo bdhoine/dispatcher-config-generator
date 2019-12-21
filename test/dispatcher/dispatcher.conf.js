@@ -6,7 +6,7 @@ const DispatcherConfig = require('../../src/dispatcher/dispatcher-config');
 describe('dispatcher.conf file', function() {
   before(function(done) {
     const config = new DispatcherConfig();
-    stream = config.generate();
+    const stream = config.generate();
     stream.on('end', function() {
       done();
     });
