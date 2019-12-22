@@ -19,7 +19,7 @@ describe('dispatcher.conf file', function() {
   const lines = [
     'DispatcherConfig conf/dispatcher.any',
     'DispatcherLog logs/dispatcher.log',
-    'DispatcherLogLevel warn',
+    'DispatcherLogLevel 3',
     'DispatcherDeclineRoot Off',
     'DispatcherUseProcessedURL On',
     'DispatcherPassError 0',

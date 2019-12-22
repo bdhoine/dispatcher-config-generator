@@ -1,5 +1,5 @@
 .github/
-.eslintrc
 .gitignore
-.sonarcloud.properties
-config
+.nyc_output
+config/
+coverage/
