@@ -1,6 +1,0 @@
-.github/
-.gitignore
-.nyc_output
-.sonarcloud.properties
-config/
-coverage/

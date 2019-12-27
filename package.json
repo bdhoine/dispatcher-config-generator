@@ -2,6 +2,17 @@
   "name": "dispatcher-config-generator",
   "version": "0.0.3",
   "description": "Generate dispatcher config from yaml",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bdhoine/dispatcher-config-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bdhoine/dispatcher-config-generator/issues"
+  },
+  "files": [
+    "bin",
+    "src"
+  ],
   "scripts": {
     "generate": "node . -c config",
     "lint:eslint-fix": "eslint . --fix",
