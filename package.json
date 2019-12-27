@@ -13,6 +13,15 @@
     "bin",
     "src"
   ],
+  "keywords": [
+    "aem",
+    "dispatcher",
+    "config",
+    "generator",
+    "apache",
+    "adobe",
+    "adobe-expierence-manager"
+  ],
   "scripts": {
     "generate": "node . -c config",
     "lint:eslint-fix": "eslint . --fix",
