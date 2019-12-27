@@ -6,6 +6,7 @@ Make sure to read the [CONTRIBUTING](CONTRIBUTING.md) documentation.
 
 ![Github Actions](https://github.com/bdhoine/dispatcher-config-generator/workflows/Build/badge.svg)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=bdhoine_dispatcher-config-generator&metric=alert_status)](https://sonarcloud.io/dashboard?id=bdhoine_dispatcher-config-generator)
+[![Npmjs](https://img.shields.io/npm/v/dispatcher-config-generator?logo=npm&color=blue)](https://www.npmjs.com/package/dispatcher-config-generator)
 
 Generate dispatcher configuration files from templates with YAML input.
 
