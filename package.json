@@ -1,6 +1,6 @@
 {
   "name": "dispatcher-config-generator",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Generate dispatcher config from yaml",
   "repository": {
     "type": "git",
