@@ -2,6 +2,7 @@
 
 **Warning**: This project is work in progress, so please contribute to work
 towards a first release if you like the idea.
+Make sure to read the [CONTRIBUTING](CONTRIBUTING.md) documentation.
 
 ![Github Actions](https://github.com/bdhoine/dispatcher-config-generator/workflows/Build/badge.svg)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=bdhoine_dispatcher-config-generator&metric=alert_status)](https://sonarcloud.io/dashboard?id=bdhoine_dispatcher-config-generator)
@@ -58,10 +59,11 @@ config/
 The subfolders `dispatcher` and `farms` are fixed.
 The config file for the dispatcher should also be `config.yaml`
 For the farms you can choose an aribtrary name.
+When no `name` key is present in the config the filename will be used.
 
 ### Dispatcher
 
-Example yaml config file for the dispatcher configuration
+Example yaml config file for the dispatcher configuration:
 
 ```yaml
 ---
@@ -79,7 +81,7 @@ use-processed-url: On
 
 ### Farms
 
-Example yaml config file for the dispatcher farm configuration
+Example yaml config file for the dispatcher farm configuration:
 
 ```yaml
 ---
@@ -104,30 +106,3 @@ renderers:
 virtual-hosts:
 - "*"
 ```
-
-## TODO
-
-- Add more tests
-- Enhance documentation
-- Seperate config and logic to generate configs
-- Determine mechanism to support environments or variables
-- Add templates for vhost creation
-
-## Development
-
-To install all depenencies you can use the `npm` command.
-
-```sh
-npm install
-```
-
-Install the `dispatcher-config-generator` binary globally.
-
-```sh
-npm install -g .
-```
-
-To run all test you should use the `npm test` command.
-
-All source code files are also checked on syntax.
-To check this you should run the `npm lint` command.

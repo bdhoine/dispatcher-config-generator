@@ -23,9 +23,11 @@ Always write a clear log message for your commits.
 One-line messages are fine for small changes, but bigger changes should
 look like this:
 
-    $ git commit -m "A brief summary of the commit
-    >
-    > A paragraph describing what changed and its impact."
+```sh
+$ git commit -m "A brief summary of the commit
+>
+> A paragraph describing what changed and its impact."
+```
 
 Every contribution needs to pass all linting and testing.
 Pull requests with failing tests or failing static code analysis will
@@ -38,5 +40,25 @@ readability:
 
 * We indent using two spaces (soft tabs)
 * Most of the coding conventions are enforced by the linters
+* Only add newlines between block on the same indentation level
+
+## Development
+
+To install all depenencies you can use the `npm` command.
+
+```sh
+npm install
+```
+
+To test the binary you can install the `dispatcher-config-generator` binary globally.
+
+```sh
+npm install -g .
+```
+
+To run all test you should use the `npm test` command.
+
+All source code files are also checked on syntax.
+To check this you should run the `npm run lint` command.
 
 Thanks!
